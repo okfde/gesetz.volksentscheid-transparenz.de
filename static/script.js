@@ -123,7 +123,7 @@ document.addEventListener('DOMContentLoaded', function () {
       if (jump) {
         link.innerHTML = '&rarr;'
       } else {
-        link.textContent = '?'
+        link.textContent = 'Begründung'
       }
       link.addEventListener('click', loadExplanation)
       heading.appendChild(link)
