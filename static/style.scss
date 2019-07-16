@@ -1,0 +1,154 @@
+---
+---
+
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+}
+
+.toc-wrapper {
+    flex: 0 0 20%;
+    font-size: 0.9rem;
+    padding: 0 15px 0 5px;
+}
+
+.toc {
+    position: sticky;
+    top: 0;
+
+    height: 100vh;
+    overflow-y: auto;
+
+    button {
+        padding: 0px;
+        margin-left: 0.25rem;
+    }
+
+    ol {
+        list-style-type: none;
+        padding-left: 0.5rem;
+    }
+    a, a:visited {
+        color: blue;
+        text-decoration: none;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+    .toc-link-h1 {
+        font-weight: bold;
+    }
+    .toc-li-h1 {
+        margin-top: 1rem;
+    }
+
+}
+
+.annotation-wrapper {
+    flex: 1 1 auto;
+    background-color: #eee;
+    padding: 5px 10px;
+}
+
+.annotation {
+    position: sticky;
+    top: 0;
+    
+    height: 100vh;
+    overflow-y: auto;
+
+    p {
+        font-size: 0.9em;
+    }
+    a, a:visited {
+        color: blue;
+        text-decoration: none;
+    }
+}
+
+.content {
+    flex: 1 1 auto;
+    padding: 0 5px;
+
+    line-height: 1.5;
+    hyphens: auto;
+}
+
+.content p:first-child {
+    font-size: 0.8rem;
+}
+
+.content {
+
+    hr {
+        page-break-after: always;
+    }
+
+    h1 {
+        font-size: 1.6rem;
+    }
+    h2 {
+        font-size: 1.3rem;
+        padding-top: 1.5rem;
+    }
+    h3 {
+        font-size: 1.5rem;
+        padding-top: 1.3rem;
+    }
+    h4 {
+        font-size: 1.2rem;
+    }
+
+    ul {
+        list-style-type: none;
+        padding-left: 0;
+    }
+
+    ol {
+        padding-left: 1.5rem;
+        padding-top: 0.5rem;
+    }
+
+    ol > li {
+        padding-left: 0;
+        text-indent: 0; 
+        padding-bottom: 0.5rem;
+    }
+
+    ul > li {
+        padding-bottom: 1rem;
+        margin-left: 1.7rem; 
+        text-indent: -1.7rem 
+    }
+
+    .ref, .ref:visited {
+        font-size: 0.8rem;
+        float: right;
+        color: blue;
+        text-decoration: none;
+    }
+    .ref:hover {
+        text-decoration: underline;
+    }
+}
+
+
+@media print{
+    body {
+        font-size: 13pt;
+        margin: 1rem 1.5rem 3rem 1rem;
+    }
+    .toc-wrapper, .annotation-wrapper {
+        display: none;
+    }
+    .no-print {
+        display: none;
+    }
+}

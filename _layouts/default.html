@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ page.title }}</title>
+    <link rel="stylesheet" href="/static/style.css">
+  </head>
+  <body>
+    <main class="main">
+      <div class="toc-wrapper no-print">
+        <h3>Inhaltsverzeichnis</h3>
+        <div class="toc" id="toc">
+        </div>
+      </div>
+      <div class="content" id="content">
+        {{ content }}
+      </div>
+      <div class="annotation-wrapper no-print">
+        <div id="annotation" class="annotation"></div>
+      </div>
+    </main>
+    <script src="/static/script.js"></script>
+  </body>
+</html>
