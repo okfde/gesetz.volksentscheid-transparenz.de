@@ -75,7 +75,7 @@ function loadExplanation (e) {
   e.preventDefault()
   var html = [node.outerHTML]
   node = node.nextElementSibling
-  while (node.tagName.indexOf('H') !== 0) {
+  while (node !== null && node.tagName.indexOf('H') !== 0) {
     html.push(node.outerHTML)
     node = node.nextElementSibling
   }
