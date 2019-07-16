@@ -25,6 +25,7 @@ function generateSubToc (level, headings) {
           }
         })(subToc))
         lastLi.appendChild(button)
+        // alternative insert
         // lastLi.insertBefore(button, lastLi.firstChild)
         lastLi.appendChild(subToc)
       } else {
@@ -86,11 +87,13 @@ document.addEventListener('DOMContentLoaded', function () {
   var content = document.getElementById('content')
   var toc = document.getElementById('toc')
   var headings = content.querySelectorAll('h1,h2,h3,h4,h5,h6')
+
+  /* Generate TOC */
   headingArray = Array.from(headings)
   var ul = generateSubToc(1, headingArray)
   toc.appendChild(ul)
 
-
+  /* prepare mapping of headings to explanations and reverse */
   var mapping = {}
   var explanation = {}
   var mainSections = []
@@ -110,7 +113,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-  /* Go through law draft sections */
+  /* Go through law sections and  */
   for (var i = mainSections[0]; i < mainSections[1]; i += 1) {
     var heading = headings[i]
     var sectionName = getSectionName(heading)
@@ -135,6 +138,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
+  /* Go through explanation sections and add links */
   for (var i = mainSections[2]; i < headings.length; i += 1) {
     var heading = headings[i]
     var sectionName = getSectionName(heading)
