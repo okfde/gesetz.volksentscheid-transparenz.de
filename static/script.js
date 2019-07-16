@@ -94,6 +94,11 @@ document.addEventListener('DOMContentLoaded', function () {
   var toc = document.getElementById('toc')
   var headings = content.querySelectorAll('h1,h2,h3,h4,h5,h6')
 
+  clearAnnotationButton.addEventListener('click', function(){
+    document.getElementById('annotation-content').innerHTML = ''
+    clearAnnotationButton.style.display = 'none'
+  })
+
   /* Generate TOC */
   headingArray = Array.from(headings)
   var ul = generateSubToc(1, headingArray)
