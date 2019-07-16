@@ -67,21 +67,27 @@ function loadExplanation (e) {
   console.log(this.href)
   var id = decodeURIComponent(this.href.split('#')[1])
   console.log(id)
-  var node = document.getElementById(id)
-  if (!hasMoreText(node)) {
+  var headingNode = document.getElementById(id)
+  if (!hasMoreText(headingNode)) {
     // next element is another heading, just jump there
     return true
   }
   e.preventDefault()
-  var html = [node.outerHTML]
-  node = node.nextElementSibling
+  var html = [headingNode.outerHTML]
+  var node = headingNode.nextElementSibling
   while (node !== null && node.tagName.indexOf('H') !== 0) {
     html.push(node.outerHTML)
     node = node.nextElementSibling
   }
-  document.getElementById('annotation').innerHTML = html.join('')
-  document.location.href = '#' + this.parentElement.id
+  html = html.join('')
+  html = html.replace(/ id="[^"]+"/g, '').replace(/<a .*<\/a>/, '')
+  document.getElementById('annotation-content').innerHTML = html
+  document.querySelector('#annotation-content ' + headingNode.tagName.toLowerCase()).scrollIntoView()
+  this.parentElement.scrollIntoView()
+  clearAnnotationButton.style.display = 'block'
 }
+
+var clearAnnotationButton = document.getElementById('clear-annotation')
 
 document.addEventListener('DOMContentLoaded', function () {
   var content = document.getElementById('content')
