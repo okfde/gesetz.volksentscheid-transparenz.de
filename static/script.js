@@ -58,12 +58,16 @@ function getSectionName (heading) {
   return match[1]
 }
 
+function hasMoreText (node) {
+  return node.nextElementSibling.tagName.indexOf('H') !== 0
+}
+
 function loadExplanation (e) {
   console.log(this.href)
   var id = decodeURIComponent(this.href.split('#')[1])
   console.log(id)
   var node = document.getElementById(id)
-  if (node.nextElementSibling.tagName.indexOf('H') === 0) {
+  if (!hasMoreText(node)) {
     // next element is another heading, just jump there
     return true
   }
@@ -119,12 +123,13 @@ document.addEventListener('DOMContentLoaded', function () {
       link.href = "#" + explanation[sectionName].id
       link.className = 'ref begruendung'
       link.title = "Zur Begründung"
-      var jump = explanation[sectionName].nextElementSibling.tagName.indexOf('H') === 0
-      if (jump) {
-        link.innerHTML = '&rarr;'
-      } else {
+
+      if (hasMoreText(explanation[sectionName])) {
         link.textContent = 'Begründung'
+      } else {
+        link.innerHTML = '&rarr;'
       }
+
       link.addEventListener('click', loadExplanation)
       heading.appendChild(link)
     }
