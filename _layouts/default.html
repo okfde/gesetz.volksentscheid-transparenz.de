@@ -7,22 +7,32 @@
     <link rel="stylesheet" href="static/style.css">
   </head>
   <body>
-    <main class="main">
-      <div class="toc-wrapper no-print">
-        <h3>Inhaltsverzeichnis</h3>
-        <div class="toc" id="toc">
+    <div class="container-fluid">
+      <main id="main" class="main row">
+        <div id="toc-wrapper" class="toc-wrapper no-print col-lg-3" style="display:none">
+          <div class="toc-menu">
+            <button type="button" class="no-print" id="toc-toggler" aria-expanded="false" aria-controls="toc-wrapper">
+              Inhaltsverzeichnis
+            </button>
+          </div>
+          <div id="toc-container" class="toc-container">
+            <div class="toc" id="toc">
+          </div>
+          </div>
         </div>
-      </div>
-      <div class="content" id="content">
-        {{ content }}
-      </div>
-      <div class="annotation-wrapper no-print">
-        <div id="annotation" class="annotation">
-          <button id="clear-annotation" style="display: none">×</button>
-          <div id="annotation-content"></div>
+        <div class="content-wrapper col-lg-5 col-sm-7">
+          <div class="content" id="content">
+            {{ content }}
+          </div>
         </div>
-      </div>
-    </main>
+        <div class="annotation-wrapper no-print col-lg-4 col-sm-5">
+          <div id="annotation" class="annotation">
+            <button id="clear-annotation" style="display: none">×</button>
+            <div id="annotation-content"></div>
+          </div>
+        </div>
+      </main>
+    </div>
     <script src="static/script.js"></script>
   </body>
 </html>

@@ -6,3 +6,6 @@ defaults:
       path: "" # an empty string here means all files in the project
     values:
       layout: "default"
+
+sass:
+  sass_dir: static/_scss

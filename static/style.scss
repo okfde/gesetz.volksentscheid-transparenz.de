@@ -1,34 +1,36 @@
 ---
 ---
 
-body {
-    margin: 0;
-    padding: 0;
-    font-size: 20px;
-    font-family: Arial, Helvetica, sans-serif;
-}
+@import "bootstrap-reboot";
+@import "bootstrap-grid";
 
-.main {
-    display: flex;
-    justify-content: center;
+body {
+    font-size: 20px;
+    hyphens: auto;
+    word-break: break-word;
 }
 
 .toc-wrapper {
-    flex: 0 0 20%;
     font-size: 0.9rem;
-    padding: 0 15px 0 5px;
+    background-color: white;
+}
+
+#toc-toggler {
+    margin: 1rem 0;
+}
+
+.toc-container {
+    display: none;
+}
+.toc-container.show {
+    display: block;
 }
 
 .toc {
-    position: sticky;
-    top: 0;
-
-    height: 100vh;
-    overflow-y: auto;
-
-    button {
-        padding: 0px;
+    a.collapse, a.collapse:visited {
+        padding: 0px 2px;
         margin-left: 0.25rem;
+        color: #bbb;
     }
 
     ol {
@@ -45,16 +47,35 @@ body {
     .toc-link-h1 {
         font-weight: bold;
     }
-    .toc-li-h1 {
+    .toc-li-h1:not(:first-child) {
         margin-top: 1rem;
     }
+}
 
+@media screen and (min-width: 992px) {
+    .toc-menu {
+        display: none;
+    }
+    .toc-container {
+        display: block !important;
+
+        position: sticky;
+        top: 0;
+    
+        height: 100vh;
+        overflow-y: auto;
+    } 
 }
 
 .annotation-wrapper {
-    flex: 1 1 auto;
     background-color: #eee;
-    padding: 5px 10px;
+    display: none;
+}
+
+@media screen and (min-width: 576px) {
+    .annotation-wrapper {
+        display: block;
+    }
 }
 
 #clear-annotation {
@@ -80,11 +101,7 @@ body {
 }
 
 .content {
-    flex: 1 1 auto;
-    padding: 0 5px;
-
     line-height: 1.5;
-    hyphens: auto;
 }
 
 .content p:first-child {
@@ -95,10 +112,29 @@ body {
 
     hr {
         page-break-after: always;
+        margin: 2rem 0;
+    }
+
+
+    h1, h2, h3, h4, h5 {
+        page-break-after: avoid;
+        break-after: avoid;
+        page-break-inside:avoid;
+        break-inside:avoid;
+    }
+
+    h1+ul, h2+ul, h3+ul, h3+ul, h4+ul, h5+ul,
+    h1+ol, h2+ol, h3+ol, h3+ol, h4+ol, h5+ol,
+    h1+p, h2+p, h3+p, h3+p, h4+p, h5+p {
+        page-break-before: avoid;
+        break-before: avoid;
     }
 
     h1 {
         font-size: 1.6rem;
+        position: sticky;
+        top: 0;
+        background-color: white;
     }
     h2 {
         font-size: 1.3rem;
@@ -121,19 +157,34 @@ body {
         padding-left: 1.5rem;
         padding-top: 0.5rem;
     }
+    p {
+        page-break-inside: avoid;
+        break-inside: avoid;
+    }
 
     ol > li {
         padding-left: 0;
         text-indent: 0; 
         padding-bottom: 0.5rem;
+        page-break-inside: avoid;
+        break-inside: avoid;
     }
 
     ul > li {
         padding-bottom: 1rem;
         margin-left: 1.7rem; 
-        text-indent: -1.7rem 
+        text-indent: -1.7rem;
+        page-break-inside: avoid;
+        break-inside: avoid;
     }
-
+    .self, .self:visited {
+        color: #bbb;
+        text-decoration: none;
+        margin-left: 0.2rem;
+    }
+    .self::after {
+        content: '↗︎';
+    }
     .ref, .ref:visited {
         font-size: 0.8rem;
         float: right;
@@ -145,11 +196,10 @@ body {
     }
 }
 
-
 @media print{
     body {
         font-size: 13pt;
-        margin: 1rem 1.5rem 3rem 1rem;
+        // margin: 1rem 1.5rem 3rem 1rem;
     }
     .toc-wrapper, .annotation-wrapper {
         display: none;
