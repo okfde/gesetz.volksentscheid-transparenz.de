@@ -521,7 +521,7 @@ Zu Nr. 4: Der Senat, der Rat der Bürgermeister, Landes- und Bezirksausschüsse,
 
 Zu Nr. 5 und 6: Im föderalistischen System ist das Verhalten des Landes Berlin in länderübergreifenden Gremien ebenfalls transparent zu gestalten. Daher sind Tagesordnungen, Vorlagen, Beschlüsse, Protokolle und Berichte der Berliner Abgesandten zu veröffentlichen. Dazu gehören auch Vorgaben über das Abstimmungsverhalten. Zu den Gremien gehören neben dem Bundesrat unter anderem die Konferenzen der Ministerpräsidenten und Fachminister der Länder.
 
-Zu Nr. 7: Verschiedene Pläne und Register sowie Verzeichnisse müssen veröffentlicht werden. Der Haushaltsplan umfasst den Gesamtplan, Einzelpläne, Bezirkshaushaltspläne sowie Wirtschaftspläne. Auch unterjährige Änderungen an den Plänen sind von der Veröffentlichungspflicht umfasst. Zu den Verwaltungsgliederungspläne gehören unter anderem Organigramme und Organisationspläne.
+Zu Nr. 7: Verschiedene Pläne und Register sowie Verzeichnisse müssen veröffentlicht werden. Der Haushaltsplan umfasst den Gesamtplan, Einzelpläne, Bezirkshaushaltspläne sowie Wirtschaftspläne. Auch unterjährige Änderungen an den Plänen sind von der Veröffentlichungspflicht umfasst. Zu den Verwaltungsgliederungsplänen gehören unter anderem Organigramme und Organisationspläne.
 
 Zu Nr. 8: Gesellschaftsverträge, Satzungen, Geschäftsordnungen und Arbeitshilfen sind zu veröffentlichen. Dies betrifft vor allem informationspflichtige Stellen nach § 3 Abs. 1 Nr. 2 und 3.
 
